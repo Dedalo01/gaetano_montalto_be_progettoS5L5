@@ -2,7 +2,83 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+
+
+
+<form asp-controller="Home" asp-action="Index" method="post">
+    <label for="violazioneId">Scegli la Violazione commessa</label>
+    <select name="violazioneId" id="violazioni">
+        @foreach (var violazione in Model.Violazioni)
+        {
+            <option value="@violazione.IdViolazione">@violazione.Descrizione</option>
+        }
+    </select>
+
+    <div>
+        <h2>Anagrafica trasgressore</h2>
+        <div class="form-group">
+            <label for="cognome">Cognome:</label>
+            <input id="cognome" name="cognome" class="form-control" placeholder="Inserisci Cognome" />
+        </div>
+
+        <div class="form-group">
+            <label for="nome">Nome:</label>
+            <input id="nome" name="nome" class="form-control" placeholder="Inserisci Nome" />
+        </div>
+
+        <div class="form-group">
+            <label for="indirizzo">Indirizzo:</label>
+            <input id="indirizzo" name="indirizzo" class="form-control" placeholder="Inserisci Indirizzo" />
+        </div> 
+        
+        <div class="form-group">
+            <label for="citta">Citta:</label>
+            <input id="citta" name="citta" class="form-control" placeholder="Inserisci Citta" />
+        </div>
+        
+        <div class="form-group">
+            <label for="cap">CAP:</label>
+            <input id="cap" name="cap" class="form-control" placeholder="Inserisci CAP" />
+        </div>
+
+        <div class="form-group">
+            <label for="cf">Codice Fiscale:</label>
+            <input id="cf" name="cf" class="form-control" placeholder="Inserisci Codice Fiscale" />
+        </div>
+
+    </div>
+
+    <div>
+    <h3>Inserisci dati del Verbale</h3>
+
+        <div class="form-group">
+            <label for="dataV">Data Violazione:</label>
+            <input id="dataV" name="dataV" class="form-control" placeholder="Inserisci Data" />
+        </div>
+        <div class="form-group">
+            <label for="indirizzoV">Indirizzo Violazione:</label>
+            <input id="indirizzoV" name="indirizzoV" class="form-control" placeholder="Inserisci Indirizzo Violazione" />
+        </div>
+        <div class="form-group">
+            <label for="nominativoV">Nominativo Agente:</label>
+            <input id="nominativoV" name="nominativoV" class="form-control" placeholder="Inserisci nominativo" />
+        </div>
+         <div class="form-group">
+            <label for="dataTV">Data Trascrizione Verbale:</label>
+            <input id="dataTV" name="dataTV" class="form-control" placeholder="Inserisci data trascrizione" />
+        </div>
+        <div class="form-group">
+            <label for="importo">Importo:</label>
+            <input id="importo" name="importo" class="form-control" placeholder="Inserisci importo" />
+        </div>
+        <div class="form-group">
+            <label for="punti">Decurtamento punti:</label>
+            <input id="punti" name="punti" class="form-control" placeholder="Inserisci punti" />
+        </div>
+        <!-- id aggiunti da controller -->
+
+
+    </div>
+
+        <button type="submit" class="btn btn-primary">Salva Verbale</button>
+</form>
