@@ -8,3 +8,5 @@ Per creare e popolare il database:
 - Rifare un'ultima volta il procedimento, però con il file `PopulateVerbale.sql`
 
 Se tutto funziona dovreste avere 3 tabelle: **Anagrafica**, **Verbale** e **TipoViolazione**, ognuna contenente 5 record.
+
+N.B: Ricordati di cambiare i valori della connection string! O non partirà mai il progetto.
