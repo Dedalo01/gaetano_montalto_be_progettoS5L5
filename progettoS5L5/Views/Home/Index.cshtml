@@ -2,10 +2,11 @@
     ViewData["Title"] = "Home Page";
 }
 
-
-
+<h1 class="mt-5">Benvenuto Agente</h1>
+<p class="mb-5">Immetti tutti i dati per stilare il verbale:</p>
 
 <form asp-controller="Home" asp-action="Index" method="post">
+    <h2>Scegli la Violazione</h2>
     <label for="violazioneId">Scegli la Violazione commessa</label>
     <select name="violazioneId" id="violazioni">
         @foreach (var violazione in Model.Violazioni)
@@ -14,8 +15,8 @@
         }
     </select>
 
-    <div>
-        <h2>Anagrafica trasgressore</h2>
+    <div class="my-5">
+        <h2>Anagrafica del Trasgressore</h2>
         <div class="form-group">
             <label for="cognome">Cognome:</label>
             <input id="cognome" name="cognome" class="form-control" placeholder="Inserisci Cognome" />
@@ -48,8 +49,8 @@
 
     </div>
 
-    <div>
-    <h3>Inserisci dati del Verbale</h3>
+    <div class="mb-4">
+    <h2>Dati per Verbale</h2>
 
         <div class="form-group">
             <label for="dataV">Data Violazione:</label>
@@ -79,6 +80,7 @@
 
 
     </div>
-
-        <button type="submit" class="btn btn-primary">Salva Verbale</button>
+    <div class="my-3">
+        <button type="submit" class="btn btn-success fs-3">Salva Verbale</button>
+    </div>
 </form>

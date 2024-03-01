@@ -2,13 +2,15 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
+    ViewData["Title"] = "Funzionalità Varie";
 }
 
 
-<h1>Controlli Generici</h1>
+<h1 class="mt-5 text-center">Altre Funzionalità</h1>
 
-
-<a asp-controller="Info" asp-action="TrasgressoriData">Vai a trasgressori</a>
-<a asp-controller="Info" asp-action="MaggioreDieciPunti">Vai a punti</a>
-<a asp-controller="Info" asp-action="MaggioreDiQuattrocento">Maggiore di 400</a>
+<div class="d-flex justify-content-around align-content-center p-5 ">
+    <a asp-controller="Info" asp-action="TrasgressoriData" class="btn btn-success d-block fs-4">Totale Verbali e Decurtazione Punti</a>
+    <a asp-controller="Info" asp-action="MaggioreDieciPunti" class="btn btn-success d-block fs-4">Decurtamento di oltre 10 Punti</a>
+    <a asp-controller="Info" asp-action="MaggioreDiQuattrocento" class="btn btn-success d-block fs-4">Verbali di oltre 400€</a>
+</div>
 
