@@ -126,6 +126,7 @@ namespace progettoS5L5.Controllers
             catch (Exception ex) { }
             finally { DB.conn.Close(); }
 
+            TempData["addSuccess"] = "L'inserimento del verbale è riuscito.";
             return RedirectToAction("Index");
         }
         public IActionResult Privacy()
